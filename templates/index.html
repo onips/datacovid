@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for ('static',filename='style.css')}}">
+
+    <title>COVID 19 | INO</title>
+  </head>
+  <body>
+    
+    <div class="container mt-5">
+      <div class="card" style="background-color: #050A27">
+        <div class="card-body pl-5 pb-5">
+          <nav class="nav mt-3">
+            <h5 class="mr-5">COVID<br>19</h5>
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Schedule</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+
+          <div class="row main mt-4">
+            <div class="col-md-9">
+              <h1 class="display-3">Ayo Lawan COVID 19</h1></span><h1 class="display-4"><span>#DIRUMAHAJA</span></h1>
+              <p>#lawancorona #lawancorona #lawancorona #lawancorona</p>
+            </div>
+          </div>
+          <br>
+
+          <h2 style="color:white">Indonesia</h2>
+          {% for data in data_indo %}
+          <div class="container"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card" style="width: 20rem">
+                <img class="card-img-top border-dark" src="{{url_for ('static',filename='img/FFP2 Face mask-amico.png')}}">
+                <div class="card-body">
+                  <h4 class="card-title">Positif : {{data.positif}}</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="width: 20rem">
+                <img class="card-img-top border-dark" src="{{url_for ('static',filename='img/Person with medical mask-pana.png')}}">
+                <div class="card-body">
+                  <h4 class="card-title">Sembuh : {{data.sembuh}}</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="width: 20rem">
+                <img class="card-img-top border-dark" src="{{url_for ('static',filename='img/Ghosts-pana.png')}}">
+                <div class="card-body">
+                  <h4 class="card-title">Meninggal : {{data.meninggal}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <br>
+          <br>
+
+            <h2 style="color:white">Jawa Barat</h2>
+            <div class="col-mt-4">
+              {% for data in data_jabar %}
+              <div class="card" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/FFP2 Face mask-amico.png')}}" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Positif :</h2>
+                      <h2 class="card-title">{{data.Kasus_Posi}}</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/Person with medical mask-pana.png')}}" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Sembuh :</h2>
+                      <h2 class="card-title">{{data.Kasus_Semb}}</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/Zombies-bro.png')}}" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Meninggal :</h2>
+                      <h2 class="card-title">{{data.Kasus_Meni}}</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+              {% endfor %}
+            <h2 style="color:white">Ciamis</h2>
+            <div class="col-mt-4">
+              
+              <div class="card" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/FFP2 Face mask-amico.png')}}" class="card-img" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Positif :</h2>
+                      <h2 class="card-title">0</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/Person with medical mask-pana.png')}}" class="card-img" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Sembuh :</h2>
+                      <h2 class="card-title">0</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-gutters">
+                  <div class="col-md-3">
+                    <img src="{{url_for ('static',filename='img/Zombies-bro.png')}}" class="card-img" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title">Meninggal :</h2>
+                      <h2 class="card-title">0</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <img src="{{url_for ('static',filename='img/doctor_fight.png')}}"class="bg-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
